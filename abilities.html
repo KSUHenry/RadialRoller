@@ -9,12 +9,12 @@
 	<ul class="menu">
 		<div class="toggle"><ion-icon name="add-outline"></ion-icon></div> 
 		<li style="--i:0;" class="active"><a href="index.html"><ion-icon name="home-outline"></ion-icon></a></li>
-		<li style="--i:1;"><a href="#">STR</a></li>
-		<li style="--i:2;"><a href="#">DEX</a></li>
-		<li style="--i:3;"><a href="#">CON</a></li>
-		<li style="--i:4;"><a href="#">INT</a></li>
-		<li style="--i:5;"><a href="#">WIS</a></li>
-		<li style="--i:6;"><a href="#">CHA</a></li>
+		<li id="STR" style="--i:1;"><a href="#">STR</a></li>
+		<li id="DEX" style="--i:2;"><a href="#">DEX</a></li>
+		<li id="CON" style="--i:3;"><a href="#">CON</a></li>
+		<li id="INT" style="--i:4;"><a href="#">INT</a></li>
+		<li id="WIS" style="--i:5;"><a href="#">WIS</a></li>
+		<li id="CHA" style="--i:6;"><a href="#">CHA</a></li>
 		<li style="--i:7;"><a href="saves.html"><ion-icon name="bag-add-outline"></ion-icon></a></li>
 		
 		<!-- total number of list item = 8 -->
@@ -39,6 +39,40 @@
 		}
 		list.forEach((item) =>
 		item.addEventListener('click',activeLink))
+
+		function addBeyond20EventListener(name, callback) {
+    	const event = ["Beyond20_" + name, (evt) => {
+        const detail = evt.detail || [];
+        callback(...detail)
+    	}, false];
+   		document.addEventListener(...event);
+    	return event;
+		}
+
+		function handleClick1() {
+    	alert('Function tied to STR');
+  		}
+  		function handleClick2() {
+    	alert('Function tied to DEX');
+  		}
+  		function handleClick3() {
+    	alert('Function tied to CON');
+  		}
+		  function handleClick4() {
+    	alert('Function tied to INT');
+  		}
+  		function handleClick5() {
+    	alert('Function tied to WIS');
+  		}
+  		function handleClick6() {
+    	alert('Function tied to CHA');
+  		}
+  		document.getElementById("STR").addEventListener("click", handleClick1);
+  		document.getElementById("DEX").addEventListener("click", handleClick2);
+  		document.getElementById("CON").addEventListener("click", handleClick3);
+		document.getElementById("INT").addEventListener("click", handleClick4);
+  		document.getElementById("WIS").addEventListener("click", handleClick5);
+  		document.getElementById("CHA").addEventListener("click", handleClick6);
 	</script>
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

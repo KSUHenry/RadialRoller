@@ -39,6 +39,15 @@
 		}
 		list.forEach((item) =>
 		item.addEventListener('click',activeLink))
+
+		function addBeyond20EventListener(name, callback) {
+    	const event = ["Beyond20_" + name, (evt) => {
+        const detail = evt.detail || [];
+        callback(...detail)
+    	}, false];
+   		document.addEventListener(...event);
+    	return event;
+		}
 	</script>
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
