@@ -4,7 +4,7 @@
     "description": "Provides a simple accessability tool for D&D Beyond's character sheets",
     "version": "0.1",
     "action": {
-        "default_popup": "popup/popup.html"
+        "default_popup": "popup/index.html"
     },
     "icons": {
         "16": "images/16.png",
