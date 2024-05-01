@@ -6,43 +6,41 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="bulma.min.css">
 </head>
-<body>
-	<div class="container">
-		<ul class="menu">
-			<div class="toggle"><ion-icon name="add-outline"></ion-icon></div> 
-			<li style="--i:0;" class="active"><a href="heal.html"><ion-icon name="chevron-up-circle-outline"></ion-icon></a></li>
-			<li style="--i:1;"><a href="abilities.html"><ion-icon name="person-outline"></ion-icon></a></li>
-			<li style="--i:2;"><a href="saves.html"><ion-icon name="bag-add-outline"></ion-icon></a></li>
-			<li style="--i:3;"><a href="skill0.html"><ion-icon name="construct-outline"></ion-icon></a></li>
-			<li style="--i:4;"><a href="attack.html"><ion-icon name="skull-outline"></ion-icon></a></li>
-			<li style="--i:5;"><a href="harm.html"><ion-icon name="chevron-down-circle-outline"></ion-icon></a></li>
-			<!-- total number of list item = 6 -->
+  <body>
+    <div class="container">
+      <ul class="menu">
+        <div class="toggle"><img src="../images/add-outline.svg" alt="Open/Close"></div> 
+        <li style="--i:0;" class="active"><a href="heal.html"><img src="../images/chevron-up-circle-outline.svg" alt="Heal"></a></li>
+        <li style="--i:1;"><a href="abilities.html"><img src="../images/person-outline.svg" alt="abilities"></a></li>
+        <li style="--i:2;"><a href="saves.html"><img src="../images/bag-add-outline.svg" alt="Saving Throws"></a></li>
+        <li style="--i:3;"><a href="skill0.html"><img src="../images/construct-outline.svg" alt="Skills"></a></li>
+        <li style="--i:4;"><a href="attack.html"><img src="../images/skull-outline.svg" alt="Attack"></a></li>
+        <li style="--i:5;"><a href="harm.html"><img src="../images/chevron-down-circle-outline.svg" alt="Harm"></a></li>
+        <!-- total number of list item = 6 -->
 
-			<div class="indicator">
-			</div>
-		</div>
-	</ul>
+        <div class="indicator">
+        </div>
+      </div>
+    </ul>
 
-	<script>
-		let menuToggle = document.querySelector('.toggle');
-		let menu = document.querySelector('.menu');
-		menuToggle.onclick = function(){
-			menu.classList.toggle('active')
-			menuToggle.classList.toggle('active')
-		}
+    <script>
+      let menuToggle = document.querySelector('.toggle');
+      let menu = document.querySelector('.menu');
+      menuToggle.onclick = function(){
+        menu.classList.toggle('active')
+        menuToggle.classList.toggle('active')
+      }
 
-		const list = document.querySelectorAll('li');
-		function activeLink(){
-			list.forEach((item) =>
-			item.classList.remove('active'));
-			this.classList.add('active')
-		}
-		list.forEach((item) =>
-		item.addEventListener('click',activeLink))
-	</script>
+      const list = document.querySelectorAll('li');
+      function activeLink(){
+        list.forEach((item) =>
+        item.classList.remove('active'));
+        this.classList.add('active')
+      }
+      list.forEach((item) =>
+      item.addEventListener('click',activeLink))
+    </script>
 
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</body>
+  </body>
 </html>
 
