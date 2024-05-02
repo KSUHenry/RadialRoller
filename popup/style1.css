@@ -10,7 +10,7 @@ body
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #222327;
+  background: #E1BE6A;
 }
 .menu 
 {
@@ -27,7 +27,7 @@ body
   width: 75px;
   height: 75px;
   background: #fff;
-  color: #222327;
+  color: #E1BE6A;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -40,7 +40,7 @@ body
 {
   transform: rotate(315deg);
   box-shadow: 0 0 0 68px #fff;
-  background: #222327;
+  background: #E1BE6A;
   color: #fff;
 }
 .menu li 
@@ -68,7 +68,7 @@ body
   width: 55px;
   height: 55px;
   font-size: 1.75em;
-  color: #222327;
+  color: #E1BE6A;
   transform: rotate(calc(360deg / -8 * var(--i))); 
   border-radius: 50%;
 }
@@ -95,7 +95,7 @@ body
   left: 72px;
   width: 55px;
   height: 55px;
-  background: #222327;
+  background: #40B0A6;
   box-shadow: 0 0 0 6px #29fd53;
   border-radius: 50%;
   transition: 0.5s;
@@ -107,7 +107,7 @@ body
   top: -27.5px;
   left: -27.5px;
   background: #29fd53;
-  box-shadow: 0 0 0 6px #222327;
+  box-shadow: 0 0 0 6px #40B0A6;
 }
 .menu li:nth-child(2).active ~ .indicator 
 {
