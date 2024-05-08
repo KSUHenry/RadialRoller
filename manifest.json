@@ -4,26 +4,39 @@
     "description": "Provides a simple accessability tool for D&D Beyond's character sheets",
     "version": "0.75",
     "action": {
-        "default_popup": "popup/saves.html"
+        "default_popup": "popup/index.html"
     },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "https://.roll20.net/*"
+    ],
+    "host_permissions": [
+        "https://www.developer.chrome.com/*",
+        "https://.roll20.net/*"
+      ],
+
+    "optional_permissions": [
+        "topSites"
+      ],
+
+    "background": {
+        "service_worker": "popup/background.js"
+      },
+
     "icons": {
         "16": "images/16.png",
         "32": "images/32.png",
         "48": "images/48.png",
         "128": "images/128.png"
     },
-    "content_scripts": [{
-        "matches": [
-            "http://*/*",
-            "https://*/*"
+    "content_scripts": [
+        {
+          "matches": ["https://.roll20.net/*"],
+          "js": ["popup/content.js"],
+          "run_at": "document_idle"
+        }
+      ]
 
-        ],
-
-        "js": ["popup/popup.js"]
-        
-    }],
-    "permissions": [
-        "activeTab",
-        "storage"
-    ]
+  
 }
