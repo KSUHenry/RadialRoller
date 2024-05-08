@@ -4,18 +4,22 @@
 	<meta charset="utf-8">
 	<title>Radial Roller</title>
 	<link rel="stylesheet" href="style1.css">
+	<script src="popup.js"></script>
+
 </head>
 <body>
+	<form id="myForm">
+		<input type="text" id="inputText" placeholder="Enter text">
+	  </form>
 	<ul class="menu">
 		<div class="toggle"><img src="../images/add-outline.svg" alt="Open/Close"></div> 
-		<li id style="--i:0;" class="active"><a href="index.html"><img src="../images/home-outline.svg" alt="Main Menu"></a></li>
-		<li style="--i:1;"><a href="#">STR(S)</a></li>
-		<li style="--i:2;"><a href="#">DEX(S)</a></li>
-		<li style="--i:3;"><a href="#">CON(S)</a></li>
-		<li style="--i:4;"><a href="#">INT(S)</a></li>
-		<li style="--i:5;"><a href="#">WIS(S)</a></li>
-		<li style="--i:6;"><a href="#">CHA(S)</a></li>
-		<li style="--i:7;"><a href="abilities.html"><ion-icon name="../person-outline"></ion-icon></a></li>
+		<li style="--i:0;" class="active"><a href="index.html"><img src="../images/home-outline.svg" alt="Main Menu"></a></li>
+		<li style="--i:1;"><button type="button" id="strS">STR(S)</button></li>
+		<li style="--i:2;"><button type="button" id="dexS">DEX(S)</button></li>
+		<li style="--i:3;"><button type="button" id="conS">CON(S)</button></li>
+		<li style="--i:4;"><button type="button" id="intS">INT(S)</button></li>
+		<li style="--i:5;"><button type="button" id="wisS">WIS(S)</button></li>
+		<li style="--i:6;"><button type="button" id="chaS">CHA(S)</button></li>
 		
 		<!-- total number of list item = 8 -->
 
@@ -23,75 +27,7 @@
 		</div>
 	</ul>
 
-	<script>
-		let menuToggle = document.querySelector('.toggle');
-		let menu = document.querySelector('.menu');
-		menuToggle.onclick = function(){
-			menu.classList.toggle('active')
-			menuToggle.classList.toggle('active')
-		}
 
-		const list = document.querySelectorAll('li');
-		function activeLink(){
-			list.forEach((item) =>
-			item.classList.remove('active'));
-			this.classList.add('active')
-		}
-		list.forEach((item) =>
-		item.addEventListener('click',activeLink))
-
-		function addBeyond20EventListener(name, callback) {
-    	const event = ["Beyond20_" + name, (evt) => {
-        const detail = evt.detail || [];
-        callback(...detail)
-    	}, false];
-   		document.addEventListener(...event);
-    	return event;
-		}
-
-		function handleClick1() {
-    	alert('Function tied to STR');
-  		}
-  		function handleClick2() {
-    	alert('Function tied to DEX');
-  		}
-  		function handleClick3() {
-    	alert('Function tied to CON');
-  		}
-		  function handleClick4() {
-    	alert('Function tied to INT');
-  		}
-  		function handleClick5() {
-    	alert('Function tied to WIS');
-  		}
-  		function handleClick6() {
-    	alert('Function tied to CHA');
-  		}
-  		document.getElementById("STR").addEventListener("click", handleClick1);
-  		document.getElementById("DEX").addEventListener("click", handleClick2);
-  		document.getElementById("CON").addEventListener("click", handleClick3);
-		document.getElementById("INT").addEventListener("click", handleClick4);
-  		document.getElementById("WIS").addEventListener("click", handleClick5);
-  		document.getElementById("CHA").addEventListener("click", handleClick6);
-
-		function addBeyond20EventListener(name, callback) {
-          const event = ["Beyond20_" + name, (evt) => {
-            const detail = evt.detail || [];
-            callback(...detail)
-          }, false];
-          document.addEventListener(...event);
-          return event;
-        }     
-        function sendBeyond20Event(name, ...args) {
-          // You would need a function isFirefox to check if the extension is running in Firefox
-          const detail = isFirefox() ? cloneInto(args, window) : args;
-          const event = new CustomEvent("Beyond20_" + name, { "detail": detail });
-          document.dispatchEvent(event);
-        }
-	</script>
-
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
 

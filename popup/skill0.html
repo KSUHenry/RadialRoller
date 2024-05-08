@@ -4,17 +4,18 @@
 	<meta charset="utf-8">
 	<title>Radial Roller</title>
 	<link rel="stylesheet" href="style1.css">
+	<script src="popup.js"></script>
 </head>
 <body>
 	<ul class="menu">
 		<div class="toggle"><img src="../images/add-outline.svg" alt="Open/Close"></div> 
 		<li style="--i:0;" class="active"><a href="index.html"><img src="../images/home-outline.svg" alt="Main Menu"></a></li>
-		<li id="ACRO" style="--i:1;"><a href="#">ACRO</a></li>
-		<li id="AnHa" style="--i:2;"><a href="#">AnHa</a></li>
-		<li id="ACRA" style="--i:3;"><a href="#">ARCA</a></li>
-		<li id="ATHL" style="--i:4;"><a href="#">ATHL</a></li>
-		<li id="DECE" style="--i:5;"><a href="#">DECE</a></li>
-		<li id="HIST" style="--i:6;"><a href="#">HIST</a></li>
+		<li id="ACRO" style="--i:1;">ACRO</li>
+		<li id="AnHa" style="--i:2;">AnHa</li>
+		<li id="ACRA" style="--i:3;">ARCA</li>
+		<li id="ATHL" style="--i:4;">ATHL</li>
+		<li id="DECE" style="--i:5;">DECE</li>
+		<li id="HIST" style="--i:6;">HIST</li>
 		<li style="--i:7;"><a href="skill1.html"><img src="../images/chevron-forward-circle-outline.svg" alt="Skills2"></a></li>
 		
 		<!-- total number of list item = 8 -->
@@ -23,66 +24,7 @@
 		</div>
 	</ul>
 
-	<script>
-		let menuToggle = document.querySelector('.toggle');
-		let menu = document.querySelector('.menu');
-		menuToggle.onclick = function(){
-			menu.classList.toggle('active')
-			menuToggle.classList.toggle('active')
-		}
-
-		const list = document.querySelectorAll('li');
-		function activeLink(){
-			list.forEach((item) =>
-			item.classList.remove('active'));
-			this.classList.add('active')
-		}
-		list.forEach((item) =>
-		item.addEventListener('click',activeLink))
-
-		function addBeyond20EventListener(name, callback) {
-          const event = ["Beyond20_" + name, (evt) => {
-            const detail = evt.detail || [];
-            callback(...detail)
-          }, false];
-          document.addEventListener(...event);
-          return event;
-        }     
-        function sendBeyond20Event(name, ...args) {
-          // You would need a function isFirefox to check if the extension is running in Firefox
-          const detail = isFirefox() ? cloneInto(args, window) : args;
-          const event = new CustomEvent("Beyond20_" + name, { "detail": detail });
-          document.dispatchEvent(event);
-        }
-
-		function handleClick1() {
-    	alert('Function tied to PERF');
-  		}
-  		function handleClick2() {
-    	alert('Function tied to PERS');
-  		}
-  		function handleClick3() {
-    	alert('Function tied to RELI');
-  		}
-		  function handleClick4() {
-    	alert('Function tied to SoHa');
-  		}
-  		function handleClick5() {
-    	alert('Function tied to STEA');
-  		}
-  		function handleClick6() {
-    	alert('Function tied to SURV');
-  		}
-  		document.getElementById("PERF").addEventListener("click", handleClick1);
-  		document.getElementById("PERS").addEventListener("click", handleClick2);
-  		document.getElementById("RELI").addEventListener("click", handleClick3);
-		document.getElementById("SoHa").addEventListener("click", handleClick4);
-  		document.getElementById("STEA").addEventListener("click", handleClick5);
-  		document.getElementById("SURV").addEventListener("click", handleClick6);
-	</script>
-
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	
 </body>
 </html>
 
