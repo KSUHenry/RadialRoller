@@ -17,8 +17,9 @@ document.addEventListener('DOMContentLoaded', function openClose() {
 });
 
 document.addEventListener("DOMContentLoaded", function setupFormEventListener() {
-    var form = document.getElementById('commandForm');
+   var form = document.getElementById('commandForm');
     if (form) {
+        console.log("hello")
         form.addEventListener('submit', handleSubmitForm);
     } else {
         console.error('Command form element not found.');
@@ -27,16 +28,17 @@ document.addEventListener("DOMContentLoaded", function setupFormEventListener() 
 
 function handleSubmitForm(event) {
     event.preventDefault(); // Prevent the form from submitting
+    var editorExtensionId = "edapoaankfehamgcgembnaknenikagoe";
 
     var characterNameInput = document.getElementById('characterName');
     if (characterNameInput) {
         var characterName = characterNameInput.value;
 
         // Construct the command using the character name for strength saving throw
-        var command = "%" + characterName + "|strenth-roll-save";
+        var command = "%{" + characterName + "|strength}";
 
         // Send the command to Roll20
-        chrome.runtime.sendMessage({ action: 'sendCommand', command: command });
+        chrome.runtime.sendMessage(editorExtensionId, { action: 'sendCommand', command: command });
     } else {
         console.error('Character name input element not found.');
     }

@@ -4,9 +4,14 @@
 	<meta charset="utf-8">
 	<title>Radial Roller</title>
 	<link rel="stylesheet" href="style1.css">
-	<script src="popup.js"></script>
+
 </head>
 <body>
+	<form id="commandForm">
+        <label for="characterName">Enter Character Name:</label>
+        <input type="text" id="characterName" name="characterName" placeholder="Character Name">
+        <button type="submit" id="sendButton">Send Command</button>
+
 	<ul class="menu">
 		<div class="toggle"><img src="../images/add-outline.svg" alt="Open/Close"></div> 
 		<li style="--i:0;" class="active"><a href="skill1.html"><ion-icon name="chevron-back-circle-outline"></ion-icon></a></li>
@@ -23,8 +28,8 @@
 		<div class="indicator">
 		</div>
 	</ul>
-
-	
+	</form>
+	<script src="../js/popup.js"></script>
 </body>
 </html>
 

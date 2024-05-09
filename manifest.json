@@ -6,14 +6,17 @@
     "action": {
         "default_popup": "popup/index.html"
     },
+    "externally_connectable": {
+        "matches": ["https://app.roll20.net/*"]
+      },
     "permissions": [
         "activeTab",
         "storage",
-        "https://.roll20.net/*"
+        "https://app.roll20.net/*"
     ],
     "host_permissions": [
         "https://www.developer.chrome.com/*",
-        "https://.roll20.net/*"
+        "https://app.roll20.net/*"
       ],
 
     "optional_permissions": [
@@ -21,7 +24,8 @@
       ],
 
     "background": {
-        "service_worker": "popup/background.js"
+        "service_worker": "js/background.js",
+        "type": "module"
       },
 
     "icons": {
@@ -32,8 +36,8 @@
     },
     "content_scripts": [
         {
-          "matches": ["https://.roll20.net/*"],
-          "js": ["popup/content.js"],
+          "matches": ["https://app.roll20.net/*"],
+          "js": ["js/content.js"],
           "run_at": "document_idle"
         }
       ]
