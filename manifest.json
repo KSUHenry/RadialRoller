@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
     "name": "Radial Roller",
-    "description": "Provides a simple accessability tool for D&D Beyond's character sheets",
-    "version": "0.75",
+    "description": "Provides a simple accessability tool for Roll20 character sheets",
+    "version": "0.99",
     "action": {
         "default_popup": "popup/index.html"
     },

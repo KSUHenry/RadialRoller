@@ -17,19 +17,16 @@ document.addEventListener('DOMContentLoaded', function openClose() {
 });
 
 document.addEventListener("DOMContentLoaded", function setupFormEventListener() {
-   var form = document.getElementById('commandForm');
-    if (form) {
-        console.log("hello")
-        form.addEventListener('submit', handleSubmitForm);
-    } else {
-        console.error('Command form element not found.');
-    }
+   document.getElementById('strS')?.addEventListener('click', onStrengthClick);
+   document.getElementById('dexS')?.addEventListener('click', onDexterityClick);
+   document.getElementById('conS')?.addEventListener('click', onConstitutionClick);
+   document.getElementById('intS')?.addEventListener('click', onIntelligenceClick);
+   document.getElementById('wisS')?.addEventListener('click', onWisdomClick);
+   document.getElementById('chaS')?.addEventListener('click', onCharismaClick);
+    
 });
 
-function handleSubmitForm(event) {
-
-    event.preventDefault(); // Prevent the form from submitting
-    var editorExtensionId = "edapoaankfehamgcgembnaknenikagoe";
+function onCommandClick(commandName){
 
     var characterNameInput = document.getElementById('characterName');
     if (characterNameInput) {
@@ -37,13 +34,42 @@ function handleSubmitForm(event) {
         var characterName = characterNameInput.value;
 
         // Construct the command using the character name for strength saving throw
-        var command = "%{" + characterName + "|strength}";
+        var command = "%{" + characterName + "|" + commandName + "}";
 
         // Send the command to Roll20
-      chrome.runtime.sendMessage(editorExtensionId, { action: 'sendCommand', command: command });
-        
+
+      chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, { action: 'sendCommand', command: command } , function(response){
+            if(response){
+                console.log(response.toString())
+            }
+       });
+    });
     } else {
         console.error('Character name input element not found.');
     }
 };
 
+function onStrengthClick(event){
+    onCommandClick("strength");
+};
+
+function onDexterityClick(event){
+    onCommandClick("dexterity");
+};
+
+function onConstitutionClick(event){
+    onCommandClick("constitution");
+};
+
+function onIntelligenceClick(event){
+    onCommandClick("intelligence");
+};
+
+function onWisdomClick(event){
+    onCommandClick("wisdom");
+};
+
+function onCharismaClick(event){
+    onCommandClick("charisma");
+};
