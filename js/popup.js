@@ -17,12 +17,49 @@ document.addEventListener('DOMContentLoaded', function openClose() {
 });
 
 document.addEventListener("DOMContentLoaded", function setupFormEventListener() {
-   document.getElementById('strS')?.addEventListener('click', onStrengthClick);
-   document.getElementById('dexS')?.addEventListener('click', onDexterityClick);
-   document.getElementById('conS')?.addEventListener('click', onConstitutionClick);
-   document.getElementById('intS')?.addEventListener('click', onIntelligenceClick);
-   document.getElementById('wisS')?.addEventListener('click', onWisdomClick);
-   document.getElementById('chaS')?.addEventListener('click', onCharismaClick);
+    //abilities
+   document.getElementById('str')?.addEventListener('click', onStrengthClick);
+   document.getElementById('dex')?.addEventListener('click', onDexterityClick);
+   document.getElementById('con')?.addEventListener('click', onConstitutionClick);
+   document.getElementById('int')?.addEventListener('click', onIntelligenceClick);
+   document.getElementById('wis')?.addEventListener('click', onWisdomClick);
+   document.getElementById('cha')?.addEventListener('click', onCharismaClick);
+   //saves
+   document.getElementById('strS')?.addEventListener('click', onStrengthSClick);
+   document.getElementById('dexS')?.addEventListener('click', onDexteritySClick);
+   document.getElementById('conS')?.addEventListener('click', onConstitutionSClick);
+   document.getElementById('intS')?.addEventListener('click', onIntelligenceSClick);
+   document.getElementById('wisS')?.addEventListener('click', onWisdomSClick);
+   document.getElementById('chaS')?.addEventListener('click', onCharismaSClick);
+   //initiative
+   document.getElementById('init')?.addEventListener('click', onInitiativeClick);
+   //skills0
+   document.getElementById('acro')?.addEventListener('click', onAcroClick);
+   document.getElementById('anHa')?.addEventListener('click', onAnHaClick);
+   document.getElementById('arca')?.addEventListener('click', onArcaClick);
+   document.getElementById('athl')?.addEventListener('click', onAthlClick);
+   document.getElementById('dece')?.addEventListener('click', onDeceClick);
+   document.getElementById('hist')?.addEventListener('click', onHistClick);
+   //skills1
+   document.getElementById('insi')?.addEventListener('click', onInsiClick);
+   document.getElementById('inti')?.addEventListener('click', onIntiClick);
+   document.getElementById('inve')?.addEventListener('click', onInveClick);
+   document.getElementById('medi')?.addEventListener('click', onMediClick);
+   document.getElementById('natu')?.addEventListener('click', onNatuClick);
+   document.getElementById('perc')?.addEventListener('click', onPercClick);
+   //skills2
+   document.getElementById('perf')?.addEventListener('click', onPerfClick);
+   document.getElementById('pers')?.addEventListener('click', onPersClick);
+   document.getElementById('reli')?.addEventListener('click', onReliClick);
+   document.getElementById('soha')?.addEventListener('click', onSoHaClick);
+   document.getElementById('stea')?.addEventListener('click', onSteaClick);
+   document.getElementById('surv')?.addEventListener('click', onSurvClick);
+   //hit dice
+   document.getElementById('hitD')?.addEventListener('click', onHitDClick);
+   //death save
+   document.getElementById('ds')?.addEventListener('click', onDeathClick);
+
+
     
 });
 
@@ -49,7 +86,7 @@ function onCommandClick(commandName){
         console.error('Character name input element not found.');
     }
 };
-
+//abilities
 function onStrengthClick(event){
     onCommandClick("strength");
 };
@@ -72,4 +109,112 @@ function onWisdomClick(event){
 
 function onCharismaClick(event){
     onCommandClick("charisma");
+};
+//saves
+function onStrengthSClick(event){
+    onCommandClick("strength_save");
+};
+
+function onDexteritySClick(event){
+    onCommandClick("dexterity_save");
+};
+
+function onConstitutionSClick(event){
+    onCommandClick("constitution_save");
+};
+
+function onIntelligenceSClick(event){
+    onCommandClick("intelligence_save");
+};
+
+function onWisdomSClick(event){
+    onCommandClick("wisdom_save");
+};
+
+function onCharismaSClick(event){
+    onCommandClick("charisma_save");
+};
+//initiative
+function onInitiativeClick(event){
+    onCommandClick("initiative");
+};
+//skills
+function onAcroClick(event){
+    onCommandClick("acrobatics");
+};
+
+function onAnHaClick(event){
+    onCommandClick("animal_handling");
+};
+
+function onArcaClick(event){
+    onCommandClick("arcana");
+};
+
+function onAthlClick(event){
+    onCommandClick("athletics");
+};
+
+function onDeceClick(event){
+    onCommandClick("deception");
+};
+
+function onHistClick(event){
+    onCommandClick("history");
+};
+//skills1
+function onInsiClick(event){
+    onCommandClick("insight");
+};
+
+function onIntiClick(event){
+    onCommandClick("intimidation");
+};
+
+function onInveClick(event){
+    onCommandClick("investigation");
+};
+
+function onMediClick(event){
+    onCommandClick("medicine");
+};
+
+function onNatuClick(event){
+    onCommandClick("nature");
+};
+
+function onPercClick(event){
+    onCommandClick("perception");
+};
+//skills2
+function onPerfClick(event){
+    onCommandClick("performance");
+};
+
+function onPersClick(event){
+    onCommandClick("persuasion");
+};
+
+function onReliClick(event){
+    onCommandClick("religion");
+};
+
+function onSoHaClick(event){
+    onCommandClick("sleight_of_hand");
+};
+
+function onSteaClick(event){
+    onCommandClick("stealth");
+};
+
+function onSurvClick(event){
+    onCommandClick("survival");
+};
+//hit die
+function onHitDClick(event){
+    onCommandClick("hit_dice");
+};
+//death save
+function onDeathClick(event){
+    onCommandClick("death_save");
 };
