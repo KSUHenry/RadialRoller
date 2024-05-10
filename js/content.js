@@ -28,5 +28,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
         }
     } 
     sendResponse(message.action + " ran successfully "); 
+    // alert was removed as the alert function pulls the user away from the current open window forcing the extension to close.
+    //Closig the extension breaks the flow of motion and movement and it antithetical to the purpose. A small sacrifice
     return true;
 });
