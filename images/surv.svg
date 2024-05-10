@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .02em;
+      }
+
+      .cls-2 {
+        fill: #231f20;
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+        font-size: 48px;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <circle class="cls-3" cx="64.5" cy="64.5" r="64"/>
+  <text class="cls-2" transform="translate(10.38 78.59)"><tspan x="0" y="0">SU</tspan><tspan class="cls-1" x="54.72" y="0">R</tspan><tspan x="81.31" y="0">V</tspan></text>
+</svg>
