@@ -1,18 +1,32 @@
 // content.js
 
-// Function to inject the injection script into the Roll20 website
-function injectScript(scriptPath) {
-    var script = document.createElement('script');
-    script.src = chrome.runtime.getURL(scriptPath);
-    script.onload = function() {
-        this.remove(); // Clean up the injected script after it's loaded
-    };
-    (document.head || document.documentElement).appendChild(script);
-}
+// Listen for messages from the background script
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
 
-// Inject the injection script into the Roll20 website
-injectScript('injection.js');
+    if (message.action === 'sendCommand') {
 
-// Example usage: Send a command to Roll20
-var command = "%CharacterName|strength-roll-save";
-sendCommandToRoll20(command);
+        // Get the command from the message
+        var command = message.command;
+
+        // Find the text chat input field on Roll20
+        var chatInput = document.querySelector('#textchat-input textarea');
+        if (chatInput) {
+
+            // Set the command in the text chat input field
+            chatInput.value = command;
+
+            // Simulate the Enter key press to send the command
+            var enterEvent = new KeyboardEvent('keydown', {
+                key: 'Enter',
+                keyCode: 13,
+                bubbles: true,
+                cancelable: true
+            });
+            chatInput.dispatchEvent(enterEvent);
+        } else {
+            console.error('Text chat input field not found on Roll20.');
+        }
+    } 
+    sendResponse(message.action + " ran successfully "); 
+    return true;
+});

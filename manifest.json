@@ -7,16 +7,17 @@
         "default_popup": "popup/index.html"
     },
     "externally_connectable": {
-        "matches": ["https://app.roll20.net/*"]
+        "matches": ["*://app.roll20.net/*"]
       },
     "permissions": [
         "activeTab",
         "storage",
-        "https://app.roll20.net/*"
+        "tabs"
     ],
     "host_permissions": [
         "https://www.developer.chrome.com/*",
-        "https://app.roll20.net/*"
+        "https://app.roll20.net/*",
+        "*://*/*"
       ],
 
     "optional_permissions": [
@@ -36,9 +37,9 @@
     },
     "content_scripts": [
         {
-          "matches": ["https://app.roll20.net/*"],
+          "matches": ["*://*/*"],
           "js": ["js/content.js"],
-          "run_at": "document_idle"
+          "run_at": "document_start"
         }
       ]
 

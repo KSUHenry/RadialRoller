@@ -27,20 +27,23 @@ document.addEventListener("DOMContentLoaded", function setupFormEventListener() 
 });
 
 function handleSubmitForm(event) {
+
     event.preventDefault(); // Prevent the form from submitting
     var editorExtensionId = "edapoaankfehamgcgembnaknenikagoe";
 
     var characterNameInput = document.getElementById('characterName');
     if (characterNameInput) {
+
         var characterName = characterNameInput.value;
 
         // Construct the command using the character name for strength saving throw
         var command = "%{" + characterName + "|strength}";
 
         // Send the command to Roll20
-        chrome.runtime.sendMessage(editorExtensionId, { action: 'sendCommand', command: command });
+      chrome.runtime.sendMessage(editorExtensionId, { action: 'sendCommand', command: command });
+        
     } else {
         console.error('Character name input element not found.');
     }
-}
+};
 
