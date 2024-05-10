@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Radial Roller",
     "description": "Provides a simple accessability tool for Roll20 character sheets",
-    "version": "0.99",
+    "version": "1.0",
     "action": {
         "default_popup": "popup/index.html"
     },
